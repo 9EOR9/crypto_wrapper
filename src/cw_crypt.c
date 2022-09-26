@@ -558,7 +558,7 @@ void cw_crypt_free(CW_CRYPT_CTX cipher_ctx)
   if (ctx)
   {
 #ifdef HAVE_OPENSSL
-    EVP_CIPHER_CTX_cleanup(ctx->ctx);
+    EVP_CIPHER_CTX_free(ctx->ctx);
 #elif HAVE_NETTLE
     free(ctx->ctx);
 #elif HAVE_SCHANNEL
